@@ -5,7 +5,11 @@ function App() {
   const [arrayAttrici, setArrayAttrici] = useState([]);
 
   const fetchArrayAttrici = () => {
-    axios.get("https://lanciweb.github.io/demo/api/actresses/").then((res) => setArrayAttrici(res.data.actresses));
+    axios
+      .get("https://lanciweb.github.io/demo/api/actresses/")
+      .then((res) => setArrayAttrici(res.data))
+      .catch((error) => console.error(error));
+
   }
 
   useEffect(() => {
